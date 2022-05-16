@@ -1,0 +1,32 @@
+interface BaseResponse {
+  status: String
+  api_version: String
+  api_status: String
+  lang: String
+  unit: String
+  tzshift: Int
+  timezone: String
+  server_time: Int
+  location: [Float]
+}
+
+type RealtimeResult {
+  primary: Int
+}
+
+type Realtime implements BaseResponse {
+  status: String
+  api_version: String
+  api_status: String
+  lang: String
+  unit: String
+  tzshift: Int
+  timezone: String
+  server_time: Int
+  location: [Float]
+  result: RealtimeResult
+}
+
+type Query {
+  getRealtime: Realtime
+}
